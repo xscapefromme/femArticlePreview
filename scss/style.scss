@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+$darkGrayishBlue: hsl(217, 19%, 35%);
+$desaturatedDarkBlue: hsl(214, 17%, 51%);
+$lightGrayishBlue: hsl(212, 23%, 69%);
+$lightestGrayishBlue: hsl(210, 46%, 95%);
+$font-stack: 'Noto Sans', sans-serif;
+
+body {
+  background-color: $lightestGrayishBlue;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.centerCard {
+  background-color: white;
+  display: flex;
+  max-width: 1110px;
+  font-family: $font-stack;
+  border-radius: 10px;
+  box-shadow: 0 0 1px black;
+  border: none;
+  .mainContent {
+    padding: 2.5rem;
+  }
+  .drawersImgContainer {
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+  h1 {
+    color: $darkGrayishBlue;
+    font-weight: 500;
+  }
+  .mainP {
+    margin-top: 2rem;
+    color: $darkGrayishBlue;
+    font-weight: 400;
+  }
+  .profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+
+    .pfpContainer {
+      display: flex;
+      align-items: center;
+      %padding {
+        padding-left: 1rem;
+      }
+      h2 {
+        @extend %padding;
+        color: $darkGrayishBlue;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      p {
+        @extend %padding;
+        color: $lightGrayishBlue;
+        font-weight: 400;
+        font-size: 0.8rem;
+      }
+    }
+    .imgPfpContainer {
+      background-image: url(../images/avatar-michelle.jpg);
+      background-size: cover;
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+    }
+    .shareIcon {
+      background-color: $lightestGrayishBlue;
+      padding: 0.9rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
