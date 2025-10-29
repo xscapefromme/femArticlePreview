@@ -42,6 +42,7 @@ main {
     background-size: cover;
     width: 100%;
     border-radius: 10px 0 0 10px;
+    background-position: center;
   }
   h1 {
     color: $darkGrayishBlue;
@@ -84,15 +85,21 @@ main {
       height: 60px;
       width: 60px;
     }
+    div.shareIconOnClick {
+      background-color: $lightGrayishBlue;
+    }
     .shareIcon {
       background-color: $lightestGrayishBlue;
       padding: 0.9rem;
       border-radius: 50%;
       display: flex;
       justify-content: center;
-      align-items: center;
       position: relative;
+      align-items: center;
       border: none;
+    }
+    .shareIcon:hover {
+      cursor: pointer;
     }
   }
 }
@@ -135,10 +142,63 @@ main {
 }
 
 .attribution {
-  position: fixed;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0;
   text-align: center;
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .centerCard {
+    display: flex;
+    flex-direction: column;
+
+    .profileContainer {
+      margin: 1rem;
+    }
+    .drawersImgContainer {
+      height: 200px;
+      background-position: top;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .mainContent {
+      padding: 0;
+      h1 {
+        margin: 1rem;
+      }
+      p {
+        margin: 1rem;
+      }
+    }
+
+    div.profileContainerOnClickForMobile {
+      margin: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      background-color: $darkGrayishBlue;
+      border-radius: 0px 0px 10px 10px;
+
+      .mobileShareContainer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+
+        span {
+          display: flex;
+          gap: 10px;
+        }
+        P {
+          font-family: $font-stack;
+          text-transform: uppercase;
+          color: $lightGrayishBlue;
+          letter-spacing: 5px;
+        }
+      }
+    }
+  }
 }
